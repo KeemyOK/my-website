@@ -10,6 +10,7 @@
         /* Import a bolder font */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
         
         /* Reset and base styles */
         * {
@@ -473,10 +474,34 @@
         .glow-arrow-label {
             color: #a6b0cf;
             font-size: 1.1rem;
-            font-family: 'Permanent Marker', cursive;
-            font-weight: 400;
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            font-weight: 700;
             text-shadow: 0 0 8px #a6b0cf44;
             letter-spacing: 1px;
+            display: flex;
+        }
+        .glow-arrow-label span {
+            display: inline-block;
+            animation: wave 1.2s infinite;
+        }
+        .glow-arrow-label span:nth-child(1) { animation-delay: 0s; }
+        .glow-arrow-label span:nth-child(2) { animation-delay: 0.08s; }
+        .glow-arrow-label span:nth-child(3) { animation-delay: 0.16s; }
+        .glow-arrow-label span:nth-child(4) { animation-delay: 0.24s; }
+        .glow-arrow-label span:nth-child(5) { animation-delay: 0.32s; }
+        .glow-arrow-label span:nth-child(6) { animation-delay: 0.40s; }
+        .glow-arrow-label span:nth-child(7) { animation-delay: 0.48s; }
+        .glow-arrow-label span:nth-child(8) { animation-delay: 0.56s; }
+        .glow-arrow-label span:nth-child(9) { animation-delay: 0.64s; }
+        .glow-arrow-label span:nth-child(10) { animation-delay: 0.72s; }
+        .glow-arrow-label span:nth-child(11) { animation-delay: 0.80s; }
+        .glow-arrow-label span:nth-child(12) { animation-delay: 0.88s; }
+        .glow-arrow-label span:nth-child(13) { animation-delay: 0.96s; }
+        .glow-arrow-label span:nth-child(14) { animation-delay: 1.04s; }
+        .glow-arrow-label span:nth-child(15) { animation-delay: 1.12s; }
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
         
         .bookmark-hint {
@@ -484,6 +509,20 @@
             color: #a6b0cf;
             margin-top: 0.5rem;
             text-align: center;
+        }
+        
+        /* Center the Volatile Bot button, keep text+arrow on left */
+        .centered-hero-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .centered-hero-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -505,7 +544,7 @@
                 Your Secret Weapon In Crypto.
             </h1>
             
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div class="centered-hero-row">
                 <div class="glow-arrow-text" style="display: flex; align-items: center; gap: 0.5rem;">
                     <span class="glow-arrow" style="display: flex; align-items: center;">
                         <svg width="32" height="18" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 6px #a6b0cf);">
@@ -513,11 +552,15 @@
                             <path d="M25 6 L30 9 L25 12" stroke="#a6b0cf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
-                    <span class="glow-arrow-label">Drag me to your bookmarks</span>
+                    <span class="glow-arrow-label">
+                        <span>D</span><span>r</span><span>a</span><span>g</span><span>&nbsp;</span><span>m</span><span>e</span><span>&nbsp;</span><span>t</span><span>o</span><span>&nbsp;</span><span>y</span><span>o</span><span>u</span><span>r</span><span>&nbsp;</span><span>b</span><span>o</span><span>o</span><span>k</span><span>m</span><span>a</span><span>r</span><span>k</span><span>s</span>
+                    </span>
                 </div>
-                <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
-                    <img src="/api/placeholder/20/20" alt="V logo" class="v-logo"> Volatile Bot
-                </a>
+                <div class="centered-hero-btn">
+                    <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
+                        <img src="/api/placeholder/20/20" alt="V logo" class="v-logo"> Volatile Bot
+                    </a>
+                </div>
             </div>
             <div class="bookmark-hint">(CTRL+SHIFT+B To Enable Bookmarks)</div>
         </section>
