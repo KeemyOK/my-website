@@ -396,12 +396,13 @@
             right: 20px;
             display: flex;
             gap: 15px;
-            background: rgba(22, 28, 51, 0.5);
+            background: rgba(255, 255, 255, 0.18);
             padding: 10px 20px;
-            border-radius: 10px;
+            border-radius: 16px;
             z-index: 100;
-            backdrop-filter: blur(10px) saturate(1.5);
+            backdrop-filter: blur(16px) saturate(1.8);
             box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+            border: 1.5px solid rgba(255,255,255,0.22);
         }
         
         .nav-links a {
@@ -447,7 +448,7 @@
         .feature-card:nth-child(1) .feature-icon svg, /* Lightning Fast */
         .feature-card:nth-child(2) .feature-icon svg, /* Enhanced Security */
         .feature-card:nth-child(3) .feature-icon svg { /* Smart Analytics */
-            filter: drop-shadow(0 0 8px #a6b0cf) drop-shadow(0 0 16px #a6b0cf80);
+            filter: none;
         }
         .feature-icon svg,
         .feature-icon-alt svg {
@@ -552,18 +553,18 @@
         /* Active Users and Status boxes */
         .nav-info-stack {
             position: fixed;
-            top: 70px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             display: flex;
             flex-direction: column;
             gap: 12px;
             z-index: 99;
         }
         .nav-info-box {
-            background: rgba(22, 28, 51, 0.5);
-            backdrop-filter: blur(10px) saturate(1.5);
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(16px) saturate(1.8);
             color: #fff;
-            border-radius: 18px;
+            border-radius: 16px;
             padding: 8px 22px;
             font-size: 1rem;
             font-weight: 500;
@@ -572,9 +573,10 @@
             align-items: center;
             justify-content: center;
             min-width: 120px;
+            border: 1.5px solid rgba(255,255,255,0.22);
         }
         .status-box {
-            border-radius: 10px !important;
+            border-radius: 16px !important;
         }
         .nav-info-box .online {
             font-weight: bold;
@@ -586,7 +588,7 @@
 <body>
     <!-- Fixed logo in top left that stays in place when scrolling -->
     <div class="fixed-logo">
-        <img src="/api/placeholder/30/30" alt="Volatile Trade Bot Logo">
+        <img src="logo.png" alt="Volatile Trade Bot Logo">
     </div>
     
     <!-- Navigation links -->
@@ -621,7 +623,7 @@
                 </div>
                 <div class="centered-hero-center">
                     <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
-                        <img src="/api/placeholder/20/20" alt="V logo" class="v-logo"> Volatile Bot
+                        <img src="logo.png" alt="V logo" class="v-logo"> Volatile Bot
                     </a>
                 </div>
                 <div class="centered-hero-right"></div>
