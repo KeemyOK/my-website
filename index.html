@@ -149,7 +149,7 @@
             gap: 0.5rem;
             transition: transform 0.2s;
             animation: pulsate-glow 1.5s infinite;
-            box-shadow: 0 0 20px 4px #ffe600, 0 0 40px 10px #ffe60033;
+            box-shadow: 0 0 20px 4px #a6b0cf, 0 0 40px 10px #a6b0cf33;
             position: relative;
         }
         
@@ -427,17 +427,22 @@
             }
         }
         
-        /* Glow effect for SVGs */
+        /* Glow effect for SVGs - only for three features */
+        .feature-card:nth-child(1) .feature-icon svg, /* Lightning Fast */
+        .feature-card:nth-child(2) .feature-icon svg, /* Enhanced Security */
+        .feature-card:nth-child(3) .feature-icon svg { /* Smart Analytics */
+            filter: drop-shadow(0 0 8px #ffe600) drop-shadow(0 0 16px #ffe60080);
+        }
         .feature-icon svg,
         .feature-icon-alt svg {
-            filter: drop-shadow(0 0 8px #ffe600) drop-shadow(0 0 16px #ffe60080);
+            filter: none;
         }
         
         /* Pulsating and glowing Volatile Bot button */
         @keyframes pulsate-glow {
-            0% { box-shadow: 0 0 10px 2px #ffe600, 0 0 30px 10px #ffe60033; }
-            50% { box-shadow: 0 0 30px 8px #ffe600, 0 0 60px 20px #ffe60055; }
-            100% { box-shadow: 0 0 10px 2px #ffe600, 0 0 30px 10px #ffe60033; }
+            0% { box-shadow: 0 0 10px 2px #a6b0cf, 0 0 30px 10px #a6b0cf33; }
+            50% { box-shadow: 0 0 30px 8px #a6b0cf, 0 0 60px 20px #a6b0cf55; }
+            100% { box-shadow: 0 0 10px 2px #a6b0cf, 0 0 30px 10px #a6b0cf33; }
         }
     </style>
 </head>
@@ -660,6 +665,9 @@
         </div>
     </section>
 
+    <!-- Cursor-following dot -->
+    <div id="cursor-dot"></div>
+
     <script>
         // Make the "Volatile Bot" button actually draggable as a bookmark
         document.addEventListener('DOMContentLoaded', function() {
@@ -679,6 +687,28 @@
                     }
                 });
             });
+        });
+
+        // Cursor-following dot
+        const cursorDot = document.createElement('div');
+        cursorDot.id = 'cursor-dot';
+        document.body.appendChild(cursorDot);
+        Object.assign(cursorDot.style, {
+            position: 'fixed',
+            top: '0px',
+            left: '0px',
+            width: '12px',
+            height: '12px',
+            background: '#181d2d',
+            borderRadius: '50%',
+            pointerEvents: 'none',
+            zIndex: '9999',
+            transform: 'translate(-50%, -50%)',
+            transition: 'top 0.03s linear, left 0.03s linear',
+        });
+        document.addEventListener('mousemove', function(e) {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
         });
     </script>
 </body>
