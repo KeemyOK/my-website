@@ -161,7 +161,7 @@
             gap: 0.5rem;
             transition: transform 0.2s;
             animation: pulsate-glow 1.5s infinite;
-            box-shadow: 0 0 20px 4px #a6b0cf, 0 0 40px 10px #a6b0cf33;
+            box-shadow: 0 0 10px 2px #a6b0cf, 0 0 20px 5px #a6b0cf22;
             position: relative;
         }
         
@@ -237,6 +237,7 @@
             color: #a6b0cf;
             margin-bottom: 3rem;
             font-size: 1.1rem;
+            font-weight: 400;
         }
         
         .features-grid {
@@ -452,9 +453,34 @@
         
         /* Pulsating and glowing Volatile Bot button */
         @keyframes pulsate-glow {
-            0% { box-shadow: 0 0 10px 2px #a6b0cf, 0 0 30px 10px #a6b0cf33; }
-            50% { box-shadow: 0 0 30px 8px #a6b0cf, 0 0 60px 20px #a6b0cf55; }
-            100% { box-shadow: 0 0 10px 2px #a6b0cf, 0 0 30px 10px #a6b0cf33; }
+            0% { box-shadow: 0 0 5px 1px #a6b0cf, 0 0 15px 5px #a6b0cf22; }
+            50% { box-shadow: 0 0 15px 4px #a6b0cf, 0 0 30px 10px #a6b0cf33; }
+            100% { box-shadow: 0 0 5px 1px #a6b0cf, 0 0 15px 5px #a6b0cf22; }
+        }
+        
+        /* Glowing arrow and label */
+        .glow-arrow {
+            color: #a6b0cf;
+            font-size: 1.5rem;
+            filter: drop-shadow(0 0 6px #a6b0cf);
+            animation: arrow-glow 1.2s infinite alternate;
+        }
+        @keyframes arrow-glow {
+            0% { filter: drop-shadow(0 0 2px #a6b0cf); }
+            100% { filter: drop-shadow(0 0 12px #a6b0cf); }
+        }
+        .glow-arrow-label {
+            color: #a6b0cf;
+            font-size: 1rem;
+            font-weight: 500;
+            text-shadow: 0 0 8px #a6b0cf44;
+        }
+        
+        .bookmark-hint {
+            font-size: 0.85rem;
+            color: #a6b0cf;
+            margin-top: 0.5rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -473,18 +499,19 @@
     <main>
         <section class="hero">
             <h1 class="main-heading">
-                Your Secret Weapon In Crypto
+                Your Secret Weapon In Crypto.
             </h1>
             
-            <p class="subtitle">
-                Drag the button to your bookmarks and click it on Axiom to enable
-                advanced settings. No sign-ups needed. (CTRL+SHIFT+B To Enable
-                Bookmarks)
-            </p>
-            
-            <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
-                <img src="/api/placeholder/20/20" alt="V logo" class="v-logo"> Volatile Bot
-            </a>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div class="glow-arrow-text" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="glow-arrow">➔</span>
+                    <span class="glow-arrow-label">Drag me to your bookmarks</span>
+                </div>
+                <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
+                    <img src="/api/placeholder/20/20" alt="V logo" class="v-logo"> Volatile Bot
+                </a>
+            </div>
+            <div class="bookmark-hint">(CTRL+SHIFT+B To Enable Bookmarks)</div>
         </section>
         
         <section class="features">
@@ -526,7 +553,7 @@
     <section class="about-section" id="features-section">
         <div class="about-content">
             <h1 class="about-heading">Trade Smarter, Not Harder.</h1>
-            <p class="about-subtitle">Essential tools built for degen traders.</p>
+            <p class="about-subtitle">Serious tools built for serious traders.</p>
             
             <div class="features-grid">
                 <!-- Row 1 -->
