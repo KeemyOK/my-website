@@ -183,7 +183,7 @@
         }
         
         .feature-card {
-            background-color: rgba(46, 55, 86, 0.7); /* More transparency to show background */
+            background-color: #171c30 !important;
             backdrop-filter: blur(5px);
             border-radius: 0.75rem;
             padding: 2rem;
@@ -396,11 +396,12 @@
             right: 20px;
             display: flex;
             gap: 15px;
-            background-color: rgba(22, 28, 51, 0.8);
+            background: rgba(22, 28, 51, 0.5);
             padding: 10px 20px;
             border-radius: 10px;
             z-index: 100;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px) saturate(1.5);
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
         }
         
         .nav-links a {
@@ -547,6 +548,36 @@
                 justify-content: center;
             }
         }
+        
+        /* Active Users and Status boxes */
+        .nav-info-stack {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 99;
+        }
+        .nav-info-box {
+            background: rgba(22, 28, 51, 0.5);
+            backdrop-filter: blur(10px) saturate(1.5);
+            color: #fff;
+            border-radius: 18px;
+            padding: 8px 22px;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .nav-info-box .online {
+            font-weight: bold;
+            color: #4caf50;
+            margin-left: 6px;
+        }
     </style>
 </head>
 <body>
@@ -559,6 +590,11 @@
     <div class="nav-links">
         <a href="#features-section">Features</a>
         <a href="#platforms-section">Platforms</a>
+    </div>
+    
+    <div class="nav-info-stack">
+        <div class="nav-info-box">Active Users: <span id="active-users">801</span></div>
+        <div class="nav-info-box">Status: <span class="online">Online</span></div>
     </div>
     
     <main>
@@ -822,6 +858,21 @@
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
         });
+
+        // Active Users randomizer
+        (function() {
+            const el = document.getElementById('active-users');
+            let count = 801;
+            function update() {
+                // Randomly go up or down by 1
+                count += Math.random() > 0.5 ? 1 : -1;
+                if (count < 1) count = 1;
+                el.textContent = count;
+                // Next update in 2-10 seconds
+                setTimeout(update, 2000 + Math.random() * 8000);
+            }
+            setTimeout(update, 2000 + Math.random() * 8000);
+        })();
     </script>
 </body>
 </html>
