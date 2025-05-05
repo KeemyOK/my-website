@@ -9,6 +9,7 @@
     <style>
         /* Import a bolder font */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
         
         /* Reset and base styles */
         * {
@@ -127,7 +128,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: silver-flow 3s linear infinite;
+            animation: silver-flow 2.6s linear infinite;
         }
         
         @keyframes silver-flow {
@@ -471,9 +472,11 @@
         }
         .glow-arrow-label {
             color: #a6b0cf;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-family: 'Permanent Marker', cursive;
+            font-weight: 400;
             text-shadow: 0 0 8px #a6b0cf44;
+            letter-spacing: 1px;
         }
         
         .bookmark-hint {
@@ -504,7 +507,12 @@
             
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
                 <div class="glow-arrow-text" style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="glow-arrow">➔</span>
+                    <span class="glow-arrow" style="display: flex; align-items: center;">
+                        <svg width="32" height="18" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 6px #a6b0cf);">
+                            <path d="M2 9 C10 18, 22 0, 30 9" stroke="#a6b0cf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25 6 L30 9 L25 12" stroke="#a6b0cf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
                     <span class="glow-arrow-label">Drag me to your bookmarks</span>
                 </div>
                 <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
