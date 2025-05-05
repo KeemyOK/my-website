@@ -115,12 +115,24 @@
             color: #a6b0cf; /* Making "Crypto" this color */
         }
         
+        /* Flowing silver gradient text for main heading */
         .main-heading {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             font-weight: 800;
-            /* No colored spans */
+            background: linear-gradient(90deg, #e0e0e0, #a6b0cf, #e0e0e0, #a6b0cf, #e0e0e0);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: silver-flow 3s linear infinite;
+        }
+        
+        @keyframes silver-flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
         
         .subtitle {
@@ -431,7 +443,7 @@
         .feature-card:nth-child(1) .feature-icon svg, /* Lightning Fast */
         .feature-card:nth-child(2) .feature-icon svg, /* Enhanced Security */
         .feature-card:nth-child(3) .feature-icon svg { /* Smart Analytics */
-            filter: drop-shadow(0 0 8px #ffe600) drop-shadow(0 0 16px #ffe60080);
+            filter: drop-shadow(0 0 8px #a6b0cf) drop-shadow(0 0 16px #a6b0cf80);
         }
         .feature-icon svg,
         .feature-icon-alt svg {
@@ -460,12 +472,8 @@
     
     <main>
         <section class="hero">
-            <div class="enhance-button">
-                Your Secret Weapon In <span class="highlight">Crypto</span>
-            </div>
-            
             <h1 class="main-heading">
-                Trade Smarter with Advanced Tools
+                Your Secret Weapon In Crypto
             </h1>
             
             <p class="subtitle">
