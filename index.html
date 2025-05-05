@@ -3,173 +3,588 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>TradeBooster | Supercharge your trading</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: #2c3e50;
+            background-color: #0e1525;
             color: white;
-            padding: 60px 0;
-            text-align: center;
+            min-height: 100vh;
         }
         
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #0e1525;
         }
         
-        header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #3498db;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
             color: white;
-            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background 0.3s;
         }
         
-        .btn:hover {
-            background: #2980b9;
-        }
-        
-        .projects {
-            padding: 60px 0;
-        }
-        
-        .projects h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-        }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-img {
-            height: 200px;
-            background-color: #ddd;
+        .logo-icon {
+            background-color: #2e3756;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: #777;
         }
         
-        .project-info {
-            padding: 20px;
+        .bolt-icon {
+            color: #6c63ff;
+            font-size: 1.2rem;
         }
         
-        .project-info h3 {
-            margin-bottom: 10px;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
         }
         
-        footer {
-            background: #2c3e50;
+        .nav-links a {
+            color: #a6b0cf;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
             color: white;
-            text-align: center;
-            padding: 20px 0;
         }
         
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .enhance-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            color: #6c63ff;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .main-heading {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .main-heading span:first-child {
+            color: #6c99ff;
+        }
+        
+        .main-heading span:last-child {
+            color: #e066ff;
+        }
+        
+        .subtitle {
+            color: #a6b0cf;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* Button styles */
+        .drag-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            background: linear-gradient(to right, #6c63ff, #e066ff);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .drag-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Features section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .feature-card {
+            background-color: rgba(46, 55, 86, 0.3);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 300px;
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-desc {
+            color: #a6b0cf;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>Web Developer & Designer</p>
-            <a href="#contact" class="btn">Contact Me</a>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <div class="bolt-icon">⚡</div>
+            </div>
+            TradeBooster
+        </a>
+        <div class="nav-links">
+            <a href="#">Features</a>
+            <a href="#">Security</a>
+            <a href="#">About</a>
         </div>
-    </header>
+    </nav>
     
-    <section class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>This is a brief description of your first project. Talk about the technologies used and your role.</p>
+    <main>
+        <section class="hero">
+            <div class="enhance-button">
+                <span class="bolt-icon">⚡</span>
+                Enhance Your Trading Experience
+            </div>
+            
+            <h1 class="main-heading">
+                Trade Smarter with <span>Advanced</span> <span>Tools</span>
+            </h1>
+            
+            <p class="subtitle">
+                Drag the button to your bookmarks and click it on Axiom to enable
+                advanced settings. No sign-ups needed. (CTRL+SHIFT+B To Enable
+                Bookmarks)
+            </p>
+            
+            <a href="javascript:void(function(){alert('TradeBooster activated!');}())" class="drag-button" draggable="true">
+                Drag Me <span>↑</span>
+            </a>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon" style="color: #6c63ff;">⚡</div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">Execute trades instantly with optimized performance</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon" style="color: #6c63ff;">🛡️</div>
+                <h3 class="feature-title">Enhanced Security</h3>
+                <p class="feature-desc">Advanced protection against common trading risks</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon" style="color: #e066ff;">✦</div>
+                <h3 class="feature-title">Smart Analytics</h3>
+                <p class="feature-desc">Real-time insights for better trading decisions</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Section 1 - Trade Smarter -->
+    <section class="about-section">
+        <div class="about-content">
+            <h1 class="about-heading">Trade Smarter, Not Harder.</h1>
+            <p class="about-subtitle">Essential tools built for degen traders.</p>
+            
+            <div class="features-grid">
+                <!-- Row 1 -->
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M4 19h16M4 15h16M4 11h16M4 7h16"/>
+                        </svg>
                     </div>
+                    <h3 class="feature-box-title">Enhanced Trading UI</h3>
+                    <p class="feature-box-desc">A cleaner, more intuitive interface for your go-to DEX sites—making meme coin trading effortless for every degen.</p>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>This is a brief description of your second project. Talk about the technologies used and your role.</p>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
                     </div>
+                    <h3 class="feature-box-title">Keyboard Shortcuts</h3>
+                    <p class="feature-box-desc">Swift shortcuts for faster navigation and smooth trades.</p>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>This is a brief description of your third project. Talk about the technologies used and your role.</p>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
                     </div>
+                    <h3 class="feature-box-title">Bundle Checks</h3>
+                    <p class="feature-box-desc">Keep track of bundled coins with enhanced data.</p>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Twitter Reuse Checks</h3>
+                    <p class="feature-box-desc">Spot rebrand fakes on Twitter before they catch you off guard.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Domain Age Checks</h3>
+                    <p class="feature-box-desc">Verify a domain's history to know if it's legitimate or just hype.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e066ff" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">GitHub AI Analyzer</h3>
+                    <p class="feature-box-desc">Analyze GitHub repos to confirm real projects, no fakes.</p>
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="8" y1="12" x2="16" y2="12"/>
+                            <line x1="12" y1="8" x2="12" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Built-in PNL Overlay</h3>
+                    <p class="feature-box-desc">Monitor your gains and losses right on your screen.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Alpha Group Data</h3>
+                    <p class="feature-box-desc">Receive instant alerts when a coin heats up in alpha groups like Potion, Shocked, and others.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon-alt">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6c63ff" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-box-title">Quick Twitter Searches</h3>
+                    <p class="feature-box-desc">Fast Twitter searches for real-time updates.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <footer id="contact">
-        <div class="container">
-            <p>Contact me at: your.email@example.com</p>
-            <p>© 2025 Your Name. All rights reserved.</p>
+    <!-- About Section 2 - DEX Platforms -->
+    <section class="platforms-section">
+        <div class="platforms-content">
+            <h1 class="about-heading">Works With Your Top DEX Platforms</h1>
+            <p class="about-subtitle">Enhancing the trading hubs you already trust</p>
+            
+            <div class="platforms-grid">
+                <div class="platform-item">
+                    <div class="platform-check supported">
+                        <span class="check-icon">✓</span>
+                    </div>
+                    <span class="platform-name">Axiom</span>
+                    <span class="platform-status">Supported</span>
+                </div>
+                
+                <div class="platform-item">
+                    <div class="platform-check coming-soon">
+                        <span class="check-icon">×</span>
+                    </div>
+                    <span class="platform-name">Coming Soon</span>
+                    <span class="platform-status">Soon</span>
+                </div>
+            </div>
+            
+            <div class="limited-access-section">
+                <div class="limited-badge">Limited Access</div>
+                
+                <div class="cta-container">
+                    <div class="cta-text">
+                        <h2 class="cta-heading">Don't miss out on the next big meme coin</h2>
+                    </div>
+                    <a href="#" class="download-button">
+                        Download Coming Soon →
+                    </a>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <style>
+        /* Additional Styles for About Sections */
+        .about-section, .platforms-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content, .platforms-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .about-heading {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .about-subtitle {
+            color: #a6b0cf;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        .feature-box {
+            background-color: rgba(21, 25, 48, 0.5);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .feature-icon-alt {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-box-desc {
+            color: #a6b0cf;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Platforms Section */
+        .platforms-grid {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .platform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12rem;
+        }
+        
+        .platform-check {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .supported {
+            background-color: rgba(22, 28, 51, 0.8);
+        }
+        
+        .coming-soon {
+            background-color: rgba(22, 28, 51, 0.8);
+        }
+        
+        .check-icon {
+            font-size: 1.2rem;
+        }
+        
+        .supported .check-icon {
+            color: #4caf50;
+        }
+        
+        .coming-soon .check-icon {
+            color: #f44336;
+        }
+        
+        .platform-name {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .platform-status {
+            font-size: 0.9rem;
+            color: #a6b0cf;
+        }
+        
+        /* Limited Access Section */
+        .limited-access-section {
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+        .limited-badge {
+            display: inline-block;
+            background-color: rgba(22, 28, 51, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #a6b0cf;
+        }
+        
+        .cta-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .cta-text {
+            text-align: left;
+        }
+        
+        .cta-heading {
+            font-size: 1.8rem;
+            font-weight: 600;
+            max-width: 400px;
+        }
+        
+        .download-button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .download-button:hover {
+            background-color: #7b73ff;
+            transform: translateY(-2px);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .platforms-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .cta-text {
+                text-align: center;
+            }
+        }
+    </style>
 
     <script>
-        // You can add JavaScript functionality here
+        // Make the "Drag Me" button actually draggable as a bookmark
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Website loaded successfully!');
+            const dragButton = document.querySelector('.drag-button');
+            
+            // Change the href to a bookmarklet code
+            dragButton.href = "javascript:(function(){alert('TradeBooster has been activated on this page!');})()";
         });
     </script>
 </body>
