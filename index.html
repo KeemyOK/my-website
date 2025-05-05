@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volatile Trade Bot | Supercharge your trading</title>
+    <!-- Favicon link - this will use an API placeholder as requested -->
+    <link rel="icon" href="/api/placeholder/32/32" type="image/png">
     <style>
         /* Import a bolder font */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -32,6 +34,28 @@
             background-repeat: no-repeat;
             opacity: 0; /* Start with opacity 0 for fade-in effect */
             animation: fadeIn 1.5s ease forwards; /* Fade in animation */
+        }
+        
+        /* Fixed logo in top left corner */
+        .fixed-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(46, 55, 86, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .fixed-logo img {
+            width: 30px;
+            height: 30px;
         }
         
         /* Fade in animation */
@@ -345,6 +369,32 @@
             margin-right: 6px;
         }
         
+        /* Navigation styles */
+        .nav-links {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            background-color: rgba(22, 28, 51, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #a6b0cf;
+        }
+        
         /* Media Queries */
         @media (max-width: 1024px) {
             .features-grid {
@@ -374,10 +424,20 @@
     </style>
 </head>
 <body>
+    <!-- Fixed logo in top left that stays in place when scrolling -->
+    <div class="fixed-logo">
+        <img src="/api/placeholder/30/30" alt="Volatile Trade Bot Logo">
+    </div>
+    
+    <!-- Navigation links -->
+    <div class="nav-links">
+        <a href="#features-section">Features</a>
+        <a href="#platforms-section">Platforms</a>
+    </div>
+    
     <main>
         <section class="hero">
             <div class="enhance-button">
-                <!-- SVG removed as requested -->
                 Your Secret Weapon In <span class="highlight">Crypto</span>
             </div>
             
@@ -541,7 +601,7 @@
     </section>
     
     <!-- About Section 2 - DEX Platforms -->
-    <section class="platforms-section">
+    <section class="platforms-section" id="platforms-section">
         <div class="platforms-content">
             <h1 class="about-heading">Works With Your Top DEX Platforms</h1>
             <p class="about-subtitle">Enhancing the trading hubs you already trust</p>
@@ -601,21 +661,6 @@
                     }
                 });
             });
-            
-            // Add some internal navigation links to demonstrate smooth scrolling
-            const navLinks = document.createElement('div');
-            navLinks.style.cssText = 'position: fixed; top: 20px; right: 20px; display: flex; gap: 15px; background-color: rgba(22, 28, 51, 0.8); padding: 10px; border-radius: 10px; z-index: 100;';
-            navLinks.innerHTML = `
-                <a href="#features-section" style="color: white; text-decoration: none; font-size: 14px;">Features</a>
-                <a href="#platforms-section" style="color: white; text-decoration: none; font-size: 14px;">Platforms</a>
-            `;
-            document.body.appendChild(navLinks);
-            
-            // Add ID to platforms section to enable smooth scrolling to it
-            const platformsSection = document.querySelector('.platforms-section');
-            if (platformsSection && !platformsSection.id) {
-                platformsSection.id = 'platforms-section';
-            }
         });
     </script>
 </body>
