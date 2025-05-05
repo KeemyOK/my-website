@@ -471,13 +471,11 @@
         .glow-arrow {
             color: #a6b0cf;
             font-size: 1.5rem;
-            filter: drop-shadow(0 0 6px #a6b0cf);
-            animation: arrow-glow 1.2s infinite alternate;
             margin-right: 1.2rem;
         }
         @keyframes arrow-glow {
-            0% { filter: drop-shadow(0 0 2px #a6b0cf); }
-            100% { filter: drop-shadow(0 0 12px #a6b0cf); }
+            0% { }
+            100% { }
         }
         .glow-arrow-label {
             color: #a6b0cf;
@@ -679,7 +677,7 @@
             }
         }
         .drag-glow {
-            animation: dragGlowPulse 1.5s infinite;
+            animation: dragGlowPulse 3s infinite;
             box-shadow: 0 0 8px 2px #a6b0cf, 0 0 16px 4px #a6b0cf44;
             transition: box-shadow 0.2s;
         }
@@ -748,9 +746,9 @@
                 <div class="stats-card">
                     <!-- Corrected Dollar SVG -->
                     <div class="stats-svg">
-                        <svg width="32" height="32" fill="none" stroke="rgb(49, 60, 85)" stroke-width="2" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="10" stroke="rgb(49, 60, 85)" stroke-width="2"/>
-                          <path d="M12 6v12M16 8c0-1.1-1.34-2-3-2s-3 .9-3 2c0 1.1 1.34 2 3 2s3 .9 3 2-1.34 2-3 2-3-.9-3-2" stroke="rgb(49, 60, 85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Replaced with Wikimedia SVG, color #a6b0cf -->
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 416c-105.9 0-192-86.1-192-192S150.1 64 256 64s192 86.1 192 192-86.1 192-192 192zm16-272V144c0-8.8-7.2-16-16-16s-16 7.2-16 16v32c-35.3 0-64 28.7-64 64h32c0-17.7 14.3-32 32-32s32 14.3 32 32-14.3 32-32 32h-16c-35.3 0-64 28.7-64 64s28.7 64 64 64v32c0 8.8 7.2 16 16 16s16-7.2 16-16v-32c35.3 0 64-28.7 64-64h-32c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32h16c35.3 0 64-28.7 64-64s-28.7-64-64-64z" fill="#a6b0cf"/>
                         </svg>
                     </div>
                     <div class="stats-value main-heading">$200M+</div>
@@ -771,9 +769,9 @@
                 <div class="stats-card">
                     <!-- Users SVG -->
                     <div class="stats-svg">
-                        <svg width="32" height="32" fill="none" stroke="rgb(49, 60, 85)" stroke-width="2" viewBox="0 0 24 24">
-                            <circle cx="12" cy="8" r="4" stroke="rgb(49, 60, 85)" stroke-width="2"/>
-                            <path d="M2 22c0-4 4-7 10-7s10 3 10 7" stroke="rgb(49, 60, 85)" stroke-width="2"/>
+                        <svg width="32" height="32" fill="none" stroke="#a6b0cf" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="4" stroke="#a6b0cf" stroke-width="2"/>
+                            <path d="M2 22c0-4 4-7 10-7s10 3 10 7" stroke="#a6b0cf" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="stats-value main-heading">25K+</div>
