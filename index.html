@@ -573,6 +573,9 @@
             justify-content: center;
             min-width: 120px;
         }
+        .status-box {
+            border-radius: 10px !important;
+        }
         .nav-info-box .online {
             font-weight: bold;
             color: #4caf50;
@@ -593,8 +596,7 @@
     </div>
     
     <div class="nav-info-stack">
-        <div class="nav-info-box">Active Users: <span id="active-users">801</span></div>
-        <div class="nav-info-box">Status: <span class="online">Online</span></div>
+        <div class="nav-info-box status-box">Status: <span class="online">Online</span></div>
     </div>
     
     <main>
@@ -858,21 +860,6 @@
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
         });
-
-        // Active Users randomizer
-        (function() {
-            const el = document.getElementById('active-users');
-            let count = 801;
-            function update() {
-                // Randomly go up or down by 1
-                count += Math.random() > 0.5 ? 1 : -1;
-                if (count < 1) count = 1;
-                el.textContent = count;
-                // Next update in 2-10 seconds
-                setTimeout(update, 2000 + Math.random() * 8000);
-            }
-            setTimeout(update, 2000 + Math.random() * 8000);
-        })();
     </script>
 </body>
 </html>
