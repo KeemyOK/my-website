@@ -14,9 +14,26 @@
         }
         
         body {
-            background-color: #0e1525;
             color: white;
             min-height: 100vh;
+            /* Background image setup - fixed positioning for world alignment */
+            background-image: url('https://i.imgur.com/tVGZX0g.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* This makes the background stay in place when scrolling */
+            background-repeat: no-repeat;
+        }
+        
+        /* Add a dark overlay to improve text readability over the cloud background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 21, 37, 0.75); /* Dark overlay with opacity */
+            z-index: -1;
         }
         
         /* Navigation bar styles */
@@ -25,7 +42,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background-color: #0e1525;
+            background-color: rgba(14, 21, 37, 0.8); /* Semi-transparent nav */
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .logo {
@@ -146,7 +167,8 @@
         }
         
         .feature-card {
-            background-color: rgba(46, 55, 86, 0.3);
+            background-color: rgba(46, 55, 86, 0.7); /* More transparency to show background */
+            backdrop-filter: blur(5px);
             border-radius: 0.75rem;
             padding: 2rem;
             display: flex;
@@ -174,6 +196,200 @@
             color: #a6b0cf;
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+        
+        /* Additional Styles for About Sections */
+        .about-section, .platforms-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content, .platforms-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .about-heading {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .about-subtitle {
+            color: #a6b0cf;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        .feature-box {
+            background-color: rgba(21, 25, 48, 0.7); /* More transparency */
+            backdrop-filter: blur(5px);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .feature-icon-alt {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-box-desc {
+            color: #a6b0cf;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Platforms Section */
+        .platforms-grid {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .platform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12rem;
+        }
+        
+        .platform-check {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .supported {
+            background-color: rgba(22, 28, 51, 0.8);
+        }
+        
+        .coming-soon {
+            background-color: rgba(22, 28, 51, 0.8);
+        }
+        
+        .check-icon {
+            font-size: 1.2rem;
+        }
+        
+        .supported .check-icon {
+            color: #4caf50;
+        }
+        
+        .coming-soon .check-icon {
+            color: #f44336;
+        }
+        
+        .platform-name {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .platform-status {
+            font-size: 0.9rem;
+            color: #a6b0cf;
+        }
+        
+        /* Limited Access Section */
+        .limited-access-section {
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+        .limited-badge {
+            display: inline-block;
+            background-color: rgba(22, 28, 51, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #a6b0cf;
+        }
+        
+        .cta-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .cta-text {
+            text-align: left;
+        }
+        
+        .cta-heading {
+            font-size: 1.8rem;
+            font-weight: 600;
+            max-width: 400px;
+        }
+        
+        .download-button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .download-button:hover {
+            background-color: #7b73ff;
+            transform: translateY(-2px);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .platforms-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .cta-text {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -383,201 +599,6 @@
             </div>
         </div>
     </section>
-
-    <style>
-        /* Additional Styles for About Sections */
-        .about-section, .platforms-section {
-            padding: 4rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .about-content, .platforms-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        
-        .about-heading {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .about-subtitle {
-            color: #a6b0cf;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            width: 100%;
-        }
-        
-        .feature-box {
-            background-color: rgba(21, 25, 48, 0.5);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: left;
-        }
-        
-        .feature-icon-alt {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-box-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .feature-box-desc {
-            color: #a6b0cf;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        /* Platforms Section */
-        .platforms-grid {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .platform-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 12rem;
-        }
-        
-        .platform-check {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .supported {
-            background-color: rgba(22, 28, 51, 0.8);
-        }
-        
-        .coming-soon {
-            background-color: rgba(22, 28, 51, 0.8);
-        }
-        
-        .check-icon {
-            font-size: 1.2rem;
-        }
-        
-        .supported .check-icon {
-            color: #4caf50;
-        }
-        
-        .coming-soon .check-icon {
-            color: #f44336;
-        }
-        
-        .platform-name {
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .platform-status {
-            font-size: 0.9rem;
-            color: #a6b0cf;
-        }
-        
-        /* Limited Access Section */
-        .limited-access-section {
-            width: 100%;
-            margin-top: 2rem;
-        }
-        
-        .limited-badge {
-            display: inline-block;
-            background-color: rgba(22, 28, 51, 0.8);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            color: #a6b0cf;
-        }
-        
-        .cta-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 1rem;
-        }
-        
-        .cta-text {
-            text-align: left;
-        }
-        
-        .cta-heading {
-            font-size: 1.8rem;
-            font-weight: 600;
-            max-width: 400px;
-        }
-        
-        .download-button {
-            background-color: #6c63ff;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-        
-        .download-button:hover {
-            background-color: #7b73ff;
-            transform: translateY(-2px);
-        }
-        
-        /* Media Queries */
-        @media (max-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .platforms-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta-container {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .cta-text {
-                text-align: center;
-            }
-        }
-    </style>
 
     <script>
         // Make the "Drag Me" button actually draggable as a bookmark
