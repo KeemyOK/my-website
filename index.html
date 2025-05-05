@@ -72,8 +72,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(14, 21, 37, 0.75); /* Dark overlay with opacity */
+            background-color: rgba(14, 21, 37, 0.75);
             z-index: -1;
+            backdrop-filter: blur(6px) brightness(1.15); /* Added blur and exposure */
         }
         
         /* Hero section */
@@ -127,9 +128,10 @@
             max-width: 600px;
             margin-bottom: 2rem;
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 100; /* Ultra-thin */
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 0.3px;
+            font-size: 1.35rem; /* Slightly bigger */
         }
         
         /* Button styles */
@@ -146,6 +148,9 @@
             align-items: center;
             gap: 0.5rem;
             transition: transform 0.2s;
+            animation: pulsate-glow 1.5s infinite;
+            box-shadow: 0 0 20px 4px #ffe600, 0 0 40px 10px #ffe60033;
+            position: relative;
         }
         
         .drag-button:hover {
@@ -420,6 +425,19 @@
             .cta-text {
                 text-align: center;
             }
+        }
+        
+        /* Glow effect for SVGs */
+        .feature-icon svg,
+        .feature-icon-alt svg {
+            filter: drop-shadow(0 0 8px #ffe600) drop-shadow(0 0 16px #ffe60080);
+        }
+        
+        /* Pulsating and glowing Volatile Bot button */
+        @keyframes pulsate-glow {
+            0% { box-shadow: 0 0 10px 2px #ffe600, 0 0 30px 10px #ffe60033; }
+            50% { box-shadow: 0 0 30px 8px #ffe600, 0 0 60px 20px #ffe60055; }
+            100% { box-shadow: 0 0 10px 2px #ffe600, 0 0 30px 10px #ffe60033; }
         }
     </style>
 </head>
