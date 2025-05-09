@@ -1055,5 +1055,28 @@
         </div>
       </div>
     </section>
+
+<script>
+  // Check if the path is /@oda.trades
+  if (window.location.pathname === "/@ninebaa") {
+    // Create the message element
+    const message = document.createElement("div");
+    message.textContent = "You have been referred by @ninebaa!";
+    message.style.position = "fixed";
+    message.style.bottom = "10px";
+    message.style.left = "10px";
+    message.style.background = "#000";
+    message.style.color = "#fff";
+    message.style.padding = "8px 12px";
+    message.style.borderRadius = "8px";
+    message.style.fontSize = "14px";
+    message.style.opacity = "0.9";
+    message.style.zIndex = "1000";
+
+    document.body.appendChild(message);
+  }
+</script>
+
+    
 </body>
 </html>
